@@ -58,4 +58,4 @@ async def on_message(message):
     quote = inspire()
     await message.channel.send(quote)
 
-client.run(os.getenv('TOKEN'))
+client.run(os.getenv('process.env.TOKEN'))
