@@ -2,8 +2,12 @@ import discord
 import os
 import requests
 import json
+import random
+from Keep_alive import keep_alive
 
 client = discord.Client()
+
+f_hriday = ["Hriday U Fking....\nU Bloody Bastard",  "Hriday is as useless as ueue in the word queue.", "The world is a better place when Hriday is asleep.", "Hriday U Stupid?....Sorry that was an inappropriate question for a born baka.", "Tauba Tauba subha subha hriday ko dekhke mood kharab ho gaya.", "Hriday ye le tu gari chala......o wait u failed ur driving license.", "I seriously hate fridays", "#ChangeEx-Monorach", "Hey Look at my dp.....isn't it awful"]
 
 def get_joke():
   response = requests.get("https://api.chucknorris.io/jokes/random")
@@ -30,32 +34,29 @@ async def on_ready():
 @client.event
 async def on_message(message):
   if message.author == client.user:
-    return
-
-  if message.content.startswith('!Hello'):
-    await message.channel.send('Hello {}'.format(message.author.name))  
+    return  
   
-  if message.content.startswith('!hello'):
-    await message.channel.send('Hello {}'.format(message.author.name)) 
+  if message.content.lower().startswith('!hello'):
+    if message.author.name == 'ICTOAE1321':
+      await message.channel.send('Chalo Chalo aage bado....')
+    
+    else:  
+      await message.channel.send('Moshi Moshi {} sama'.format(message.author.name)) 
 
-  if message.content.startswith('!ChuckJoke'):
+  if message.content.lower().startswith('!chuckjoke'):
     meme = get_joke()
     await message.channel.send(meme)
 
-  if message.content.startswith('!joke'):
+  if message.content.lower().startswith('!joke'):
     meme = get_meme()
     await message.channel.send(meme)
-
-  if message.content.startswith('!Joke'):
-    meme = get_meme()
-    await message.channel.send(meme)
-
-  if message.content.startswith('!Inspire'):
-    quote = inspire()
-    await message.channel.send(quote)
  
-  if message.content.startswith('!inspire'):
+  if message.content.lower().startswith('!inspire'):
     quote = inspire()
     await message.channel.send(quote)
 
-client.run(os.getenv('os.getenv('TOKEN'))
+  if 'hriday' in message.content.lower():
+    await message.channel.send(random.choice(f_hriday))
+
+keep_alive()
+client.run(os.getenv('TOKEN'))
