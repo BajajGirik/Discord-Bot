@@ -43,6 +43,13 @@ async def on_message(message):
     else:  
       await message.channel.send('Moshi Moshi {} sama'.format(message.author.name)) 
 
+  if 'kong' in message.content.lower():
+    if message.author.name == 'bg2019':
+      await message.channel.send("At your service my lord")
+
+    else:
+      await message.channel.send("Bhok saale")
+
   if message.content.lower().startswith('!chuckjoke'):
     meme = get_joke()
     await message.channel.send(meme)
