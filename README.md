@@ -1,4 +1,4 @@
-# Music_Maniac
+# Kong
 It is a Discord Bot created by me using python.
 You can also use this python code for your bot.
 The only changes you will need to do is change your environment variables.
